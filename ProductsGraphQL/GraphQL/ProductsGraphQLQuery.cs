@@ -14,8 +14,8 @@ namespace ProductsGraphQL.GraphQL
         public ProductsGraphQLQuery(ProductService productService)
         {
             Field<ListGraphType<ProductType>>(
-                "products",
-                resolve: context => productService.GetAll().Result
+                name: "products",
+                resolve: context => productService.GetAll()
             );
         }
     }
